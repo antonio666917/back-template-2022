@@ -9,7 +9,18 @@ import {
 
 export const User = list({
   fields: {
+    displayName: text({
+      isIndexed: true,
+    }),
     name: text({ validation: { isRequired: true } }),
+    username: text({
+      validation: {
+        length: {
+          max: 30,
+          min: 3,
+        },
+      },
+    }),
     email: text({
       validation: { isRequired: true },
       isIndexed: "unique",

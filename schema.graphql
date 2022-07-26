@@ -3,7 +3,9 @@
 
 type User {
   id: ID!
+  displayName: String
   name: String
+  username: String
   email: String
   password: PasswordState
   isAdmin: Boolean
@@ -42,7 +44,9 @@ input UserWhereInput {
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
   id: IDFilter
+  displayName: StringFilter
   name: StringFilter
+  username: StringFilter
   email: StringFilter
   isAdmin: BooleanFilter
   posts: PostManyRelationFilter
@@ -131,7 +135,9 @@ input DateTimeFilter {
 
 input UserOrderByInput {
   id: OrderDirection
+  displayName: OrderDirection
   name: OrderDirection
+  username: OrderDirection
   email: OrderDirection
   isAdmin: OrderDirection
   lastOnlineOn: OrderDirection
@@ -144,7 +150,9 @@ enum OrderDirection {
 }
 
 input UserUpdateInput {
+  displayName: String
   name: String
+  username: String
   email: String
   password: String
   isAdmin: Boolean
@@ -174,7 +182,9 @@ input UserUpdateArgs {
 }
 
 input UserCreateInput {
+  displayName: String
   name: String
+  username: String
   email: String
   password: String
   isAdmin: Boolean

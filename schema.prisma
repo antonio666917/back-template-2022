@@ -14,7 +14,9 @@ generator client {
 
 model User {
   id           String      @id @default(cuid())
+  displayName  String      @default("")
   name         String      @default("")
+  username     String      @default("")
   email        String      @unique @default("")
   password     String
   isAdmin      Boolean     @default(false)
@@ -23,6 +25,7 @@ model User {
   lastOnlineOn DateTime?
   createdOn    DateTime    @default(now())
 
+  @@index([displayName])
   @@index([createdOn])
 }
 
